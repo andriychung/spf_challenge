@@ -22,9 +22,7 @@ Median of order values = $284 (q1.ipynb shows the calculation)
 
 SQL:
 <code>
-
     SELECT count(1) FROM Orders o join Shippers s on o.ShipperID = s.ShipperID and s.ShipperName = 'Speedy Express';
-
 </code>
 Output: 54
 
@@ -33,9 +31,7 @@ Output: 54
 
 SQL: 
 <code>
-
     select LastName from Employees where employeeid = (select employeeid from Orders o group by employeeid order by count(1) desc limit 1)
-
 </code>
 Output: Peacock
 
@@ -43,7 +39,6 @@ Output: Peacock
 
 SQL: 
 <code>
-    
     select ProductName from products where productid = (
 
     select p.productid product_count from orders o 
@@ -54,7 +49,6 @@ SQL:
     order by count(1) desc
     limit 1
     )
-
 </code>
 
 Output: Gorgonzola Telino
